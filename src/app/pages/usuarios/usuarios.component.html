@@ -1,0 +1,36 @@
+<div class="overlay-loading" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+      <app-loading></app-loading>
+    </div>
+</div>
+
+<div class="card col-md-12">
+    <div class="card-header">
+        <h4 class="card-title">Lista de Usuários</h4>
+    </div>
+    <div class="userGrid">
+        <ng-container *ngFor="let user of users">
+            <div class="card-body">
+                <div class="useRow border">
+                    <div class="col-md-2 col-2 userPadding paddingTop20">
+                        <div class="avatar">
+                            <img src="assets/img/avatar.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                        </div>
+                    </div>
+                    <div class="col-ms-5 col-5 userPadding">
+                        {{ user.name }}
+                        <br />
+                        <span class="text-danger">
+                            <small>{{ user.email }}</small>
+                        </span>
+                    </div>
+                    <div class="col-ms-5 col-5 text-right userPadding paddingTop20">
+                        <span>Bloqueado </span>
+                        <switch-toggle [id]="'isActive'" [value]="user?.bloq" (onChange)="doAction(user)"></switch-toggle>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <br>
+</div>

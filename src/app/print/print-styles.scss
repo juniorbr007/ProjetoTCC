@@ -1,0 +1,176 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+@import "./node_modules/bootstrap/scss/bootstrap";
+@import "./node_modules/bootstrap/scss/images";
+
+.bgHeader {
+    background: rgba(81, 188, 218, 0.1) !important;
+}
+
+.card-title.text-primary{
+    color: #8209D1 !important;
+}
+
+.btn-round {
+    border-radius: 30px !important;
+}
+
+.btn-round.btn-icon{
+    color: #8209D1 !important;
+}
+
+.btn.btn-outline-primary.btn-round{
+    color: #8209D1 !important;
+    border: 1px solid #8209D1 !important;
+}
+
+.btn.btn-primary.btn-round{
+    background: #8209D1 !important;
+    border: 1px solid #8209D1 !important;
+}
+
+.bgItem{
+    background: rgba(81, 188, 218, 0);
+}
+
+.pagebreak {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+}
+
+hr{
+    width: 100%;
+    border-top: 1px solid rgba(200, 200, 200, 0.4);
+}
+
+input {
+    pointer-events: none;
+}
+
+textarea{
+    pointer-events: none;
+}
+
+// Page para Gerar PDF
+@page {
+    size: A4;
+    margin: 0;
+}
+
+// Print para Gerar PDF
+@media print {
+
+    .form-control {
+        height: 20px !important;
+    }
+
+    .bgRetonro{
+        background: rgba(220, 170, 80, 0.2);
+    }
+
+    .bgHeader {
+        background: rgba(81, 188, 218, 0.1) !important;
+    }
+
+    .pdfContainer {
+        top: 0 !important;
+        margin-top: 0 !important;
+        /* to centre page on screen*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .pagebreak {
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+
+    .row .bgItem .pagebreak {
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+
+    .pdfContainer.pagebreak {
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+
+    .card-body.pagebreak {
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+    
+    div.row.bgItem.pagebreak {
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+
+    div.card-columns.pagebreak{
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+
+    button.btn.btn-sm.btn-outline-primary.btn-round.btn-icon.ocultar{
+        visibility:hidden;
+    }
+
+    button.btn.btn-sm.btn-outline-primary.btn-round.btn-icon{
+        margin-right: -20px !important;
+        margin-top: -6px !important;
+    }
+
+    img{
+        width: 280px !important;
+        height: auto !important;
+    }
+
+    .floatingCode {
+        position: absolute;
+    }
+    
+    .itemImgSize {
+        max-width: 180px;
+        height: auto;
+    }
+    
+    .bottomMargin{
+        margin-bottom: 40px;
+    }
+    
+    .btnNumber {
+        opacity: 0.6;
+        button {
+            border-color: #8209D1;
+            background: #8209D1;
+            border-style: solid;
+            border-radius: 25%;
+            border-width: 1px;
+            z-index: 1;
+            top: 8px;
+        }
+    }
+
+    .container .btnNumber {
+        opacity: 0.6;
+        button {
+            border-color: #8209D1;
+            background: #8209D1;
+            border-style: solid;
+            border-radius: 25%;
+            border-width: 1px;
+            z-index: 1;
+            top: 8px;
+        }
+    }
+
+    img.logoHeader {
+        width: auto !important;
+        height: 42px !important;
+    }
+    
+    div.verticalCenter {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}

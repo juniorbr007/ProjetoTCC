@@ -1,0 +1,4 @@
+<label class="switch" [ngClass]="{checked: value}">
+  <input hidden type="checkbox" (input)="setValue($event.target['checked'])"/>
+  <span class="slider round"></span>
+</label>

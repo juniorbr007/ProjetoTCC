@@ -1,0 +1,83 @@
+<div class="overlay-loading" *ngIf="showSpinner">
+    <div class="spinner-wrapper">
+        <app-loading></app-loading>
+    </div>
+</div>
+  
+<!-- EDITAIS -->
+<div *ngIf="mode=='list'" class="row">
+  <div *ngFor="let edit of editals" class="col-lg-3 col-md-6 col-sm-6" (click)="goToEdital(edit); mode='details'">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center">
+              <i class="nc-icon nc-paper text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <!-- <p class="card-category">Edital</p> -->
+              <p class="card-title"> {{ edit.title }} <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="nc-icon nc-alert-circle-i text-danger"></i> {{ edit.obs }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- EDITAIS -->
+
+<!-- DETAILS -->
+<div *ngIf="mode=='details'" class="col-md-12"  (click)="goToEdital(edit); mode='details'">
+  <div class="card card-user">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-6 col-6">
+          <h5 class="card-title">Entenda melhor o Edital</h5>
+        </div>
+        <div class="col-md-6 col-6 text-right">
+          <button class="btn btn-sm btn-outline-danger btn-round" (click)="delete(dataEdital.uid)">Deletar</button>
+          &nbsp; &nbsp; &nbsp;
+          <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="closeEdit()"><i class="fa fa-close"></i></button>
+        </div>
+      </div>
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>ID</label>
+              <input type="text" [(ngModel)]="dataEdital.uid" name="id" disabled="" class="form-control" placeholder="ID">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Título</label>
+              <input type="text" [(ngModel)]="dataEdital.title" name="title" class="form-control text-danger" placeholder="Título">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Descrição</label>
+              <input type="text" [(ngModel)]="dataEdital.descr" name="descr" [ngClass]="dataEdital.descr" class="form-control" placeholder="Descrição">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Observação</label>
+              <input type="text" [(ngModel)]="dataEdital.obs" name="obs" [ngClass]="dataEdital.obs" class="form-control" placeholder="Observação">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- DETAILS -->

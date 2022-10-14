@@ -1,0 +1,90 @@
+<div class="overlay-loading" *ngIf="showSpinner">
+  <div class="spinner-wrapper">
+    <app-loading></app-loading>
+  </div>
+</div>
+<div class="row" *ngIf="!showSpinner && userValue">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="image">
+        <img src="assets/img/damir-bosnjak.jpg" alt="imagem de capa">
+      </div>
+      <div class="card-body">
+        <div class="author">
+          <span class="text-danger">          
+            <div class="profile-image">
+              <img *ngIf="user.photoURL != 'Sem foto...'" class="avatar border-gray" [src]="user.photoURL" alt="foto do usuario">
+              <img *ngIf="user.photoURL == 'Sem foto...'" class="avatar border-gray" src="assets/img/avatar.jpg" alt="foto do usuario">
+              <button class="cameraButton" (click)="inputField.click()">
+                <i class="nc-icon nc-camera-compact text-center danger camIcon"></i>
+              </button>
+            </div>
+            <input #inputField hidden type="file" (change)="addUpdateImage($event)" />
+          </span>
+
+          <p class="description">
+            {{ user?.email }}
+          </p>
+        </div>
+        <hr>
+        <div class="form card text-center">
+          <textarea type="text" id="form7" [(ngModel)]="user.obs" name="obs" class="form-control" class="textarea textarea-auto text-center form-control" mdbInput>
+            {{ user?.obs }}
+          </textarea>
+        </div>
+      </div>
+
+      <hr>
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-4 pr-1">
+            <h5 class="card-title">Editar Perfil</h5>
+          </div>
+          <div *ngIf="user.admin" class="col-md-8 text-right pr-1 pr-3">
+            <!-- <span>Bloqueado </span>
+            <switch-toggle [id]="'isActive'" [value]="user?.bloq" (onChange)="doAction($event)"></switch-toggle> -->
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>Universidade</label>
+                <input type="text" class="form-control" disabled="" placeholder="Universidade" value="UFPB">
+              </div>
+            </div>
+            <div class="col-md-7 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" [(ngModel)]="user.email" name="userEmail" class="form-control" placeholder="Email">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Nome</label>
+                <input type="text" [(ngModel)]="user.name" name="userName" class="form-control" placeholder="Nome do aluno">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Endereço</label>
+                <input type="text" [(ngModel)]="user.address" name="userAddress" class="form-control" placeholder="Endereço">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" class="btn btn-danger btn-round" (click)="updateUserData(user)">Atualizar Perfil</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

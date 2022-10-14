@@ -1,0 +1,43 @@
+
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a href="/dashboard" class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="assets/img/logo-ajudai.jpg">
+      </div>
+    </a>
+    <a href="/dashboard" class="simple-text text-danger logo-normal">
+      Ajudai
+    </a>
+  </div>
+    <ul class="nav">
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+            <a [routerLink]="[menuItem.path]">
+                <i class="nc-icon {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+        <li *ngIf="userProfile.admin" routerLinkActive="active">
+            <a [routerLink]="['/add-edital']">
+                <i class="nc-icon nc-single-copy-04"></i>
+                <p> Criar Edital </p>
+            </a>
+        </li>
+        <li *ngIf="userProfile.admin" routerLinkActive="active">
+            <a [routerLink]="['/usuarios']">
+                <i class="nc-icon nc-lock-circle-open"></i>
+                <p> Usuários </p>
+            </a>
+        </li>
+    </ul>
+    <hr>
+  
+    <ul class="nav">
+      <li>
+        <a (click)="logout()">
+          <i class="nc-icon nc-button-power"></i>
+          <span>Sair</span>
+        </a>
+      </li>
+    </ul>
+</div>

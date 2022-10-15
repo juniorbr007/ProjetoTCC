@@ -113,6 +113,7 @@ export class DashboardComponent implements OnInit{
     } else {
       if(!edit.uid) return;
       this.userProjects.push(edit.uid);
+      this.alertServ.alertSuccess('Projeto Adicionado com sucesso ao seus projetos');
     }
     let dataProj = {
       createdAt: edit.createdAt,

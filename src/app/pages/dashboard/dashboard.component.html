@@ -6,7 +6,7 @@
 
 <!-- EDITAIS -->
 <div *ngIf="mode=='list'" class="row">
-  <div *ngFor="let edit of dashEditals" class="col-lg-3 col-md-6 col-sm-6" (click)="goToEdital(edit); mode='details'">
+  <div *ngFor="let edit of dashEditals" class="col-lg-4 col-md-6 col-sm-6" (click)="goToEdital(edit); mode='details'">
     <div class="card card-stats">
       <div class="card-body ">
         <div class="row">
@@ -48,55 +48,40 @@
           <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="closeEdit()"><i class="fa fa-close" title="fechar"></i></button>
         </div>
       </div>
-    <div class="card-body">
-      <form>
+    <div>
         <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>ID</label>
-              <input type="text" [(ngModel)]="dataEdital.uid" name="id" disabled="" class="form-control" placeholder="ID">
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="form-group">
               <label>Título</label>
-              <input type="text" [(ngModel)]="dataEdital.title" name="title" class="form-control text-danger" placeholder="Título">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>Descrição</label>
-              <input type="text" [(ngModel)]="dataEdital.descr" name="descr" [ngClass]="dataEdital.descr" class="form-control" placeholder="Descrição">
+              <p class="card-title">{{dataEdital.title}}<p></p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label>Observação</label>
-              <input type="text" [(ngModel)]="dataEdital.obs" name="obs" [ngClass]="dataEdital.obs" class="form-control" placeholder="Observação">
+              <p class="card-title">{{dataEdital.obs}}<p></p>
             </div>
           </div>
         </div>
-      </form>
     </div>
   </div>
 </div>
 <!-- DETAILS -->
 
-<!-- <div class="row">
+ <div *ngIf="mode=='details'" class="row">
   <div class="col-lg-3 col-md-6 col-sm-6">
     <div class="card card-stats">
       <div class="card-body ">
         <div class="row">
           <div class="col-5 col-md-4">
             <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-globe text-warning"></i>
+              <i class="nc-icon nc-user-run text-warning"></i>
             </div>
           </div>
           <div class="col-7 col-md-8">
             <div class="numbers">
-              <p class="card-category">Capacity</p>
-              <p class="card-title">150GB
-                <p>
+              <p class="card-category">Quantidade de vagas</p>
+              <p class="card-title">{{dataEdital.vagas}}<p>
             </div>
           </div>
         </div>
@@ -104,11 +89,12 @@
       <div class="card-footer ">
         <hr>
         <div class="stats">
-          <i class="fa fa-refresh"></i> Update Now
+          <i class="nc-icon nc-alert-circle-i"></i> Aproveite!
         </div>
       </div>
     </div>
   </div>
+  
   <div class="col-lg-3 col-md-6 col-sm-6">
     <div class="card card-stats">
       <div class="card-body ">
@@ -120,18 +106,14 @@
           </div>
           <div class="col-7 col-md-8">
             <div class="numbers">
-              <p class="card-category">Revenue</p>
-              <p class="card-title">$ 1,345
+              <p class="card-category">Valor da bolsa</p>
+              <p class="card-title">R$ 400
                 <p>
             </div>
           </div>
         </div>
       </div>
       <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="fa fa-calendar-o"></i> Last day
-        </div>
       </div>
     </div>
   </div>
@@ -141,23 +123,20 @@
         <div class="row">
           <div class="col-5 col-md-4">
             <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-vector text-danger"></i>
+              <i class="nc-icon nc-watch-time text-danger"></i>
             </div>
           </div>
-          <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Errors</p>
-              <p class="card-title">23
+          <div class="col-5 col-md-6">
+            <div class="">
+              <p class="card-category">Data do edital</p>
+              <p class=""  fontData>{{dataEdital.calendarfirst}}<p>
+                <p class=""fontData >{{dataEdital.calendarend}}<p></p>
                 <p>
             </div>
           </div>
         </div>
       </div>
       <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="fa fa-clock-o"></i> In the last hour
-        </div>
       </div>
     </div>
   </div>
@@ -167,23 +146,19 @@
         <div class="row">
           <div class="col-5 col-md-4">
             <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-favourite-28 text-primary"></i>
+              <i class="nc-icon nc-send text-primary"></i>
             </div>
           </div>
           <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Followers</p>
-              <p class="card-title">+45K
+            <div class="">
+              <p class="card-category">Link do Edital</p>
+              <p class=""><a>{{dataEdital.link}}</a>
                 <p>
             </div>
           </div>
         </div>
       </div>
       <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="fa fa-refresh"></i> Update now
-        </div>
       </div>
     </div>
   </div>
@@ -192,8 +167,8 @@
   <div class="col-md-12">
     <div class="card ">
       <div class="card-header ">
-        <h5 class="card-title">Users Behavior</h5>
-        <p class="card-category">24 Hours performance</p>
+        <h5 class="card-title">Descrição do edital</h5>
+        <p class="card-title">{{dataEdital.descr}}<p></p>
       </div>
       <div class="card-body ">
         <canvas id=chartHours width="400" height="100"></canvas>
@@ -201,13 +176,15 @@
       <div class="card-footer ">
         <hr>
         <div class="stats">
-          <i class="fa fa-history"></i> Updated 3 minutes ago
+          <i class="nc-icon nc-alert-circle-i"></i> Leia a descrição do edital com atenção !
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <div class="row">
+  <!-- 
   <div class="col-md-4">
     <div class="card ">
       <div class="card-header ">
@@ -231,25 +208,27 @@
       </div>
     </div>
   </div>
-  <div class="col-md-8">
+-->
+  <div class="col-md-12">
     <div class="card card-chart">
       <div class="card-header">
-        <h5 class="card-title">NASDAQ: AAPL</h5>
-        <p class="card-category">Line Chart with Points</p>
+        <h5 class="card-title">Requisitos</h5>
+        <p class="card-category">Lei com atenção os requisitos necessários</p>
       </div>
       <div class="card-body">
-        <canvas id="speedChart" width="400" height="100"></canvas>
+        <p>{{dataEdital.requirements}}</p>
       </div>
       <div class="card-footer">
         <div class="chart-legend">
-          <i class="fa fa-circle text-info"></i> Tesla Model S
-          <i class="fa fa-circle text-warning"></i> BMW 5 Series
+          <i class="fa fa-circle text-info"></i> X
+          <i class="fa fa-circle text-warning"></i> X
         </div>
         <hr/>
         <div class="card-stats">
-          <i class="fa fa-check"></i> Data information certified
+          <i class="nc-icon nc-single-copy-04"></i> Ajuste agora os documentos necessários em <a [routerLink]="['/arquivos']">Meus arquivos
+        </a>
         </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>

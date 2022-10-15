@@ -16,6 +16,11 @@ export class AddEditalComponent implements OnInit {
     title: '',
     descr: '',
     obs: '',
+    requirements: '',
+    calendarfirst: '',
+    calendarend: '',
+    link: '',
+    vagas: '',
     createdAt: 0,
     updatedAt: 0,
   };

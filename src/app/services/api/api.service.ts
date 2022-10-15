@@ -30,6 +30,11 @@ export class ApiService {
       title: dataEditals.title,
       descr: dataEditals.descr,
       obs: dataEditals.obs,
+      requirements: dataEditals.requirements,
+      calendarfirst: dataEditals.calendarfirst,
+      calendarend: dataEditals.calendarend,
+      link: dataEditals.link,
+      vagas: dataEditals.vagas,
       createdAt: Date.now(),
       updatedAt: Date.now()
     }).catch(e => {

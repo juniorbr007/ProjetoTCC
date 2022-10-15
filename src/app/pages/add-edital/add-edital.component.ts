@@ -21,6 +21,7 @@ export class AddEditalComponent implements OnInit {
     calendarend: '',
     link: '',
     vagas: '',
+    valor: '',
     createdAt: 0,
     updatedAt: 0,
   };

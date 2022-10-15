@@ -30,6 +30,7 @@ export class ProjetosComponent implements OnInit {
     calendarend: '',
     link: '',
     vagas: '',
+    valor: '',
     createdAt: 0,
     updatedAt: 0,
   };

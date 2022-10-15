@@ -13,6 +13,7 @@ import { LoadingComponent } from '../loading/loading.component';
 import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserComponent } from '../../pages/user/user.component';
 import { Routes } from '@angular/router';
+import { InicioComponent } from 'app/pages/inicio/inicio.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -21,6 +22,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'projetos',       component: ProjetosComponent },
     { path: 'add-edital',     component: AddEditalComponent },
     { path: 'usuarios',       component: UsuariosComponent },
+    { path: 'inicio',         component: InicioComponent},
     { path: 'table',          component: TableComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },

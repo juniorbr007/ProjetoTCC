@@ -1,0 +1,21 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.footer > span{
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.logo{
+    display: flex;
+    align-content: center;
+    max-height: 200px;
+    max-width: 100px;
+}
+.loginho{
+    display: flex;
+    max-height: 80px;
+    max-width: 80px;
+}

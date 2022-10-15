@@ -31,13 +31,16 @@ import { UserService } from "./services/user/user.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProjetosComponent } from './pages/projetos/projetos.component';
 import { AddEditalComponent } from './pages/add-edital/add-edital.component';
+import { InicioComponent } from "./pages/inicio/inicio.component";
+
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     ArquivosComponent,
     ProjetosComponent,
-    AddEditalComponent
+    AddEditalComponent,
+    InicioComponent
   ],
   imports: [
     CommonModule,

@@ -50,6 +50,12 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
+                <label><strong>Valor da bolsa, se houver.</strong></label>
+                <input type="text" [(ngModel)]="dataEdital.valor" name="valor" [ngClass]="dataEdital.valor" class="form-control" placeholder="Informe ou valor ou deixe 0">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
                 <label><strong>Link do edital</strong></label>
                 <input type="url" [(ngModel)]="dataEdital.link" name="vagas" [ngClass]="dataEdital.link" class="form-control" placeholder="URL aqui" required>
               </div>

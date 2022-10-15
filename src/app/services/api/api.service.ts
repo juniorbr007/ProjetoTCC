@@ -35,6 +35,7 @@ export class ApiService {
       calendarend: dataEditals.calendarend,
       link: dataEditals.link,
       vagas: dataEditals.vagas,
+      valor: dataEditals.valor,
       createdAt: Date.now(),
       updatedAt: Date.now()
     }).catch(e => {

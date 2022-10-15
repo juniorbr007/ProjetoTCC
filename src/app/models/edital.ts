@@ -8,6 +8,7 @@ export interface Edital {
     calendarend: string;
     link: string;
     vagas: string;
+    valor: string;
     createdAt: number;
     updatedAt: number;
     

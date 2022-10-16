@@ -4,6 +4,23 @@
   </div>
 </div>
 
+<div class="card ">
+  <div class="card-header ">
+    <h5 class="card-title">Editais publicados </h5>
+  </div>
+  <div class="card-body ">
+    <p>Abra um edital publicado para poder ter mais informações.</p>
+    <p >Use o botão <i class="nc-icon nc-simple-add" title="adicionar"></i> para adicionar o edital em <strong>Meus projetos</strong></p> 
+  <div class="">
+    <div class="legend">
+        &nbsp;
+      <i class="fa fa-circle text-danger"></i> Editais e projetos
+    </div>
+  </div>
+</div>
+</div>
+
+
 <!-- EDITAIS -->
 <div *ngIf="mode=='list'" class="row">
   <div *ngFor="let edit of dashEditals" class="col-lg-4 col-md-6 col-sm-6" (click)="goToEdital(edit); mode='details'">
@@ -44,9 +61,9 @@
         <div class="col-md-6 col-12">
           <h5 class="card-title">Entenda melhor o Edital</h5>
         </div>
-        <div class="col-md-6 col-6 text-right">
+        <div class="col-md-6 col-12 text-right">
           <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="subscribeProjects(dataEdital)"><i class="nc-icon nc-simple-add iconSize" title="adicionar"></i></button>
-          &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp;
           <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="closeEdit()"><i class="fa fa-close" title="fechar"></i></button>
         </div>
       </div>

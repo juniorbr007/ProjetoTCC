@@ -12,12 +12,45 @@
     </div>
 </div>
 
+
+
+<div class="col-md-12">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Faça upload de seus documentos e tenha o download dos mesmos compactados em formato de <strong>PDF!</strong> </h5>
+      </div>
+      <div class="card-body ">
+        <p>Aqui é seu espaço pessoal para guardar documentos e arquivos importantes para facilitar a documentação necessaria dos editais!</p>
+        <p>Lembrando de enviar em formato de imagem (JPG, PNG, ETC) no máximo 5MB por arquivo.</p>
+
+      <div class="">
+        <div class="legend">
+            &nbsp;
+          <i class="fa fa-circle text-danger"></i> Identidade
+          &nbsp;
+          <i class="fa fa-circle text-warning"></i> Cpf
+          &nbsp;
+          <i class="fa fa-circle text-primary"></i> Comprovantes
+          &nbsp;
+          <i class="fa fa-circle text-secondary"></i> Histórico escolar
+          &nbsp;
+          <i class="fa fa-circle text-red"></i> Carta de recomendação
+          &nbsp;
+          <!-- <i class="fa fa-circle text-gray"></i> Carta de recomendação -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 <div class="pdfContainer pagebreak">
 
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="text-danger card-header"><strong>Importe o seu RG:</strong><i class="maxSize"> (máx. 5MB)</i></div>
+                <!-- RG FRENTE-->
+                <div class="text-danger card-header"><strong>RG:</strong></div>
                 <div class="card-body">
                 <form novalidate>
                     <div class="input-group mb-3">
@@ -34,26 +67,48 @@
                 </form>
                 </div>
             </div>
-            <div class="card pagebreak">
-                <div class="text-danger card-header"><strong>Carta de recomendação:</strong><i class="maxSize"> (máx. 5MB)</i></div>
+            <!-- CPF -->
+
+            <div class="card">
+                <div class="text-warning card-header"><strong>CPF:</strong></div>
                 <div class="card-body">
                 <form novalidate>
                     <div class="input-group mb-3">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFileLangHTML" (change)="upload($event,'letter')" accept=".png,.jpg" />
+                        <input type="file" class="custom-file-input" id="customFileLangHTML" (change)="upload($event,'cpf')" accept=".png,.jpg" />
                         <label class="custom-file-label" for="customFileLangHTML" data-browse="Upload imagem">Selecione a imagem</label>
                     </div>
                     </div>
                     <div class="form-group">
-                        <div class="container text-center" *ngIf="files?.letter !== 'Sem imagem'">
-                            <img [src]="files?.letter" alt="Image from AngularFireStorage">
+                        <div class="container text-center" *ngIf="files?.cpf !== 'Sem imagem'">
+                            <img [src]="files?.cpf" alt="Image from AngularFireStorage">
                         </div>
                     </div>
                 </form>
                 </div>
             </div>
+            <!-- COMPROVANTES-->
+            <div class="card">
+                <div class="text-primary card-header"><strong>Comprovante de Residência:</strong></div>
+                <div class="card-body">
+                <form novalidate>
+                    <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLangHTML" (change)="upload($event,'proof')" accept=".png,.jpg" />
+                        <label class="custom-file-label" for="customFileLangHTML" data-browse="Upload imagem">Selecione a imagem</label>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="container text-center" *ngIf="files?.proof !== 'Sem imagem'">
+                            <img [src]="files?.proof" alt="Image from AngularFireStorage">
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+
             <div class="card pagebreak">
-                <div class="text-danger card-header"><strong>Importe seu Histórico:</strong><i class="maxSize"> (máx. 5MB)</i></div>
+                <div class="text-secondary card-header"><strong>Histórico escolar:</strong></div>
                 <div class="card-body">
                 <form novalidate>
                     <div class="input-group mb-3">
@@ -65,6 +120,25 @@
                     <div class="form-group">
                         <div class="container text-center" *ngIf="files?.history !== 'Sem imagem'">
                             <img [src]="files?.history" alt="Image from AngularFireStorage">
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+            <div class="card pagebreak">
+                <div class="text-red card-header"><strong>Carta de recomendação:</strong></div>
+                <div class="card-body">
+                <form novalidate>
+                    <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLangHTML" (change)="upload($event,'letter')" accept=".png,.jpg" />
+                        <label class="custom-file-label" for="customFileLangHTML" data-browse="Upload imagem">Selecione a imagem</label>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="container text-center" *ngIf="files?.letter !== 'Sem imagem'">
+                            <img [src]="files?.letter" alt="Image from AngularFireStorage">
                         </div>
                     </div>
                 </form>

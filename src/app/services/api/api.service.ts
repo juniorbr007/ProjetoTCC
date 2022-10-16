@@ -92,6 +92,8 @@ export class ApiService {
         uid: dataFiles.uid,
         createdAt: dataFiles.createdAt || Date.now(),
         identity: dataFiles.identity,
+        cpf: dataFiles.cpf,
+        proof: dataFiles.proof,
         history: dataFiles.history,
         letter: dataFiles.letter,
         updatedAt: Date.now(),

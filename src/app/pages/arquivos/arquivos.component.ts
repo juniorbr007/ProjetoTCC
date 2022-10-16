@@ -21,6 +21,8 @@ export class ArquivosComponent implements OnInit {
   task: AngularFireUploadTask;
   userProfile: User;
   identity: any;
+  cpf: any;
+  proof: any;
   history: any;
   letter: any;
   files: File;
@@ -47,6 +49,8 @@ export class ArquivosComponent implements OnInit {
             this.files = {
               uid: resp['uid'],
               identity: resp['identity'],
+              cpf: resp['pdf'],
+              proof: resp['proof'],
               history: resp['history'],
               letter: resp['letter'],
               createdAt: resp['createdAt'],
@@ -56,6 +60,8 @@ export class ArquivosComponent implements OnInit {
             this.files = {
               uid: this.userProfile['uid'],
               identity: 'Sem imagem',
+              cpf: 'Sem imagem',
+              proof: 'Sem imagem',
               history: 'Sem imagem',
               letter: 'Sem imagem',
               createdAt: Date.now(),
@@ -92,6 +98,12 @@ export class ArquivosComponent implements OnInit {
           if(document==='identity'){
             this.files['identity'] = photoUrl;
           };
+          if(document==='cpf'){
+            this.files['cpf'] = photoUrl;
+          };
+          if(document==='proof'){
+            this.files['proof'] = photoUrl;
+          }
           if(document==='history'){
             this.files['history'] = photoUrl;
           };

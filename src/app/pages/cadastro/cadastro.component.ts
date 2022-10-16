@@ -81,7 +81,7 @@ export class CadastroComponent implements OnInit {
             let userRes = res.payload.data();
             localStorage.setItem('userProfile', JSON.stringify(userRes));
             if(userRes['bloq']===false){
-              this.router.navigateByUrl('/admin-layout/dashboard');
+              this.router.navigateByUrl('/admin-layout/login');
             }else{
               Swal.fire({
                 icon: 'warning',

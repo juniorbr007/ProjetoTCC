@@ -12,7 +12,7 @@
 ### Para rodar localmente este projeto é necessário:
 #### Clonar o repositório
 ```javascript
-git clone git@github.com:TomCosta/ajudai.git
+git clone git@github.com:juniorbr007/ajudai.git
 ``` 
 #### Entrar na pasta do projeto
 ```javascript

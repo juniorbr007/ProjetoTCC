@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
             let userRes = res.payload.data();
             localStorage.setItem('userProfile', JSON.stringify(userRes));
             if(userRes['bloq']===false){
-              this.router.navigateByUrl('/dashboard');
+              this.router.navigateByUrl('/inicio');
             }else{
               Swal.fire({
                 icon: 'warning',

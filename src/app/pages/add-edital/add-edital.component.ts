@@ -13,6 +13,7 @@ export class AddEditalComponent implements OnInit {
 
   dataEdital: Edital = {
     uid: '',
+    tipos: '',
     title: '',
     descr: '',
     obs: '',
@@ -25,7 +26,8 @@ export class AddEditalComponent implements OnInit {
     createdAt: 0,
     updatedAt: 0,
   };
-
+  
+  tipo: string[] = ['Bolsa', 'Auxilio', 'Extensão']
   constructor(
     private fireDataBase: AngularFirestore,
     private apiServ: ApiService,

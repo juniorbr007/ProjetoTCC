@@ -1,5 +1,6 @@
 export interface Edital {
     uid: string;
+    tipos: string;
     title: string;
     descr: string;
     obs?: string;

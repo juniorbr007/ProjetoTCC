@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit{
   userProjects: any = [];
   dataEdital: Edital = {
     uid: '',
+    tipos: '',
     title: '',
     descr: '',
     obs: '',

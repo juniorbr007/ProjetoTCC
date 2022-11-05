@@ -27,6 +27,7 @@ export class ApiService {
   addEditals(dataEditals) {
     return this.firestore.collection('Editals').doc(dataEditals.uid).set({
       uid: dataEditals.uid,
+      tipos: dataEditals.tipos,
       title: dataEditals.title,
       descr: dataEditals.descr,
       obs: dataEditals.obs,

@@ -12,6 +12,16 @@
       <div class="card-body">
         <form>
           <div class="row">
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label><Strong>Tipo</Strong></label>
+                <select class="form-control" [(ngModel)]="dataEdital.tipos" name="tipos">
+                <option *ngFor="let tipo of tipo" [value]="tipo" >{{tipo}}</option>
+              </select>
+              </div>
+            </div>
+
             <div class="col-md-6">
               <div class="form-group">
                 <label><strong>ID</strong></label>

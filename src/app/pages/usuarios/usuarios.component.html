@@ -14,7 +14,10 @@
                 <div class="useRow border">
                     <div class="col-md-2 col-2 userPadding paddingTop20">
                         <div class="avatar">
-                            <img src="assets/img/avatar.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                            <img *ngIf="user.photoURL != 'Sem foto...'" class="avatar border-gray" [src]="user.photoURL"
+                                 alt="foto do usuario">
+                            <img *ngIf="user.photoURL == 'Sem foto...'" class="avatar border-gray" src="assets/img/avatar.jpg"
+                                 alt="foto do usuario">
                         </div>
                     </div>
                     <div class="col-ms-5 col-5 userPadding">

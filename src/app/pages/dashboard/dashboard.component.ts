@@ -33,6 +33,7 @@ export class DashboardComponent implements OnInit{
     createdAt: 0,
     updatedAt: 0,
   };
+  filteredString = "";
   dashEditals: any = [];
   userProfile: User;
   mode = 'list';

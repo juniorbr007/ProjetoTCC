@@ -4,25 +4,19 @@
   </div>
 </div>
 
-<div class="card ">
-  <div class="card-header ">
-    <h5 class="card-title">Editais publicados </h5>
-  </div>
-  <div class="card-body ">
-    <p>Abra um edital publicado para poder ter mais informações.</p>
-    <p >Use o botão <i class="nc-icon nc-simple-add" title="adicionar"></i> para adicionar o edital em <strong>Meus projetos</strong></p> 
-  <div class="">
-    <div class="legend">
-        &nbsp;
-      <i class="fa fa-circle text-danger"></i> Editais e projetos
-    </div>
-  </div>
-</div>
-</div>
-
 
 <!-- EDITAIS -->
 <div *ngIf="mode=='list'" class="row">
+
+  <div class="col-md-12">
+    <form>
+      <div class="form-group">
+        <label>Buscar edital</label>
+        <input type="text" [(ngModel)]="filteredString" name="filteredString" class="form-control" />
+        <small> Faça uma busca avançada para achar o seu edital</small>
+      </div>
+    </form>
+  </div>
   <div *ngFor="let edit of dashEditals" class="col-lg-4 col-md-6 col-sm-6" (click)="goToEdital(edit); mode='details'">
     <div class="card card-stats">
       <div class="card-body ">
@@ -35,7 +29,8 @@
           <div class="col-7 col-md-8">
             <div class="numbers">
               <!-- <p class="card-category">Edital</p> -->
-              <p class="card-title"> {{ edit.title }} <p>
+              <p class="card-title"> {{ edit.title }}
+              <p>
             </div>
           </div>
         </div>
@@ -52,11 +47,53 @@
       </div>
     </div>
   </div>
+
+  <nav aria-label="Page navigation example" class="footer">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
 </div>
 <!-- EDITAIS -->
 
+
+
+
 <!-- DETAILS -->
 <div *ngIf="mode=='details'" class="col-md-12">
+
+  <div class="card ">
+    <div class="card-header ">
+      <h5 class="card-title">Editais publicados </h5>
+    </div>
+    <div class="card-body ">
+      <p>Abra um edital publicado para poder ter mais informações.</p>
+      <p>Use o botão <i class="nc-icon nc-simple-add" title="adicionar"></i> para adicionar o edital em <strong>Meus
+          projetos</strong></p>
+      <div class="">
+        <div class="legend">
+          &nbsp;
+          <i class="fa fa-circle text-danger"></i> Editais e projetos
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="card card-user">
     <div class="card-header">
       <div class="row">
@@ -64,150 +101,160 @@
           <h5 class="card-title">Entenda melhor o Edital</h5>
         </div>
         <div class="col-md-6 col-12 text-right">
-          <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="subscribeProjects(dataEdital)"><i class="nc-icon nc-simple-add iconSize" title="adicionar"></i></button>
+          <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="subscribeProjects(dataEdital)"><i
+              class="nc-icon nc-simple-add iconSize" title="adicionar"></i></button>
           &nbsp; &nbsp;
-          <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="closeEdit()"><i class="fa fa-close" title="fechar"></i></button>
+          <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="closeEdit()"><i class="fa fa-close"
+              title="fechar"></i></button>
         </div>
       </div>
-    <div>
+      <div>
         <div class="row">
           <div class="col-md-4">
             <div class="form-group">
               <label><strong>Título</strong></label>
-              <p class="card-title">{{dataEdital.title}}<p></p>
+              <p class="card-title">{{dataEdital.title}}
+              <p></p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label><strong>Observação</strong></label>
-              <p class="card-title">{{dataEdital.obs}}<p></p>
+              <p class="card-title">{{dataEdital.obs}}
+              <p></p>
             </div>
           </div>
           <div class="col-md-2">
             <div class="form-group">
               <label><strong>Tipo</strong></label>
-              <p class="card-title">{{dataEdital.tipos}}<p></p>
+              <p class="card-title">{{dataEdital.tipos}}
+              <p></p>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- DETAILS -->
+  <!-- DETAILS -->
 
- <div *ngIf="mode=='details'" class="row">
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-user-run text-warning"></i>
+  <div *ngIf="mode=='details'" class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-user-run text-warning"></i>
+              </div>
             </div>
-          </div>
-          <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Quantidade de vagas</p>
-              <p class="card-title">{{dataEdital.vagas}}<p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="nc-icon nc-alert-circle-i"></i> Aproveite!
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-money-coins text-success"></i>
-            </div>
-          </div>
-          <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Valor da bolsa</p>
-              <p class="card-title">{{dataEdital.valor}}<p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-footer ">
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-watch-time text-danger"></i>
-            </div>
-          </div>
-          <div class="col-5 col-md-6">
-            <div class="">
-              <p class="card-category">Data do edital</p>
-              <p class=""  fontData>{{dataEdital.calendarfirst}}<p>
-                <p class=""fontData >{{dataEdital.calendarend}}<p></p>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Quantidade de vagas</p>
+                <p class="card-title">{{dataEdital.vagas}}
                 <p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card-footer ">
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-send text-primary"></i>
-            </div>
-          </div>
-          <div class="col-7 col-md-8">
-            <div class="">
-              <p class="card-category">Link do Edital</p>
-              <p class=""><a>{{dataEdital.link}}</a>
-                <p>
-            </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="nc-icon nc-alert-circle-i"></i> Aproveite!
           </div>
         </div>
       </div>
-      <div class="card-footer ">
-      </div>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="card ">
-      <div class="card-header ">
-        <h5 class="card-title">Descrição do edital</h5>
-        <p class="card-title">{{dataEdital.descr}}<p></p>
-      </div>
-      <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="nc-icon nc-alert-circle-i"></i> Leia a descrição do edital com atenção !
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="row">
-  <!-- 
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-money-coins text-success"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Valor da bolsa</p>
+                <p class="card-title">{{dataEdital.valor}}
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-watch-time text-danger"></i>
+              </div>
+            </div>
+            <div class="col-5 col-md-6">
+              <div class="">
+                <p class="card-category">Data do edital</p>
+                <p class="" fontData>{{dataEdital.calendarfirst}}
+                <p>
+                <p class="" fontData>{{dataEdital.calendarend}}
+                <p></p>
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-send text-primary"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="">
+                <p class="card-category">Link do Edital</p>
+                <p class=""><a>{{dataEdital.link}}</a>
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title">Descrição do edital</h5>
+          <p class="card-title">{{dataEdital.descr}}
+          <p></p>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="nc-icon nc-alert-circle-i"></i> Leia a descrição do edital com atenção !
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- 
   <div class="col-md-4">
     <div class="card ">
       <div class="card-header ">
@@ -232,26 +279,27 @@
     </div>
   </div>
 -->
-  <div class="col-md-12">
-    <div class="card card-chart">
-      <div class="card-header">
-        <h5 class="card-title">Requisitos</h5>
-        <p class="card-category">Lei com atenção os requisitos necessários</p>
-      </div>
-      <div class="card-body">
-        <p>{{dataEdital.requirements}}</p>
-      </div>
-      <div class="card-footer">
-        <div class="chart-legend">
-          <i class="fa fa-circle text-info"></i> X
-          <i class="fa fa-circle text-warning"></i> X
+    <div class="col-md-12">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h5 class="card-title">Requisitos</h5>
+          <p class="card-category">Lei com atenção os requisitos necessários</p>
         </div>
-        <hr/>
-        <div class="card-stats">
-          <i class="nc-icon nc-single-copy-04"></i> Ajuste agora os documentos necessários em <a [routerLink]="['/arquivos']">Meus arquivos
-        </a>
+        <div class="card-body">
+          <p>{{dataEdital.requirements}}</p>
+        </div>
+        <div class="card-footer">
+          <div class="chart-legend">
+            <i class="fa fa-circle text-info"></i> X
+            <i class="fa fa-circle text-warning"></i> X
+          </div>
+          <hr />
+          <div class="card-stats">
+            <i class="nc-icon nc-single-copy-04"></i> Ajuste agora os documentos necessários em <a
+              [routerLink]="['/arquivos']">Meus arquivos
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>

@@ -6,3 +6,10 @@
 .fontData {
     font-size: 20px;
 }
+
+.footer{
+    bottom: 0;
+    position: absolute;
+    width: 90%;
+    text-align: right;
+}

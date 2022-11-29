@@ -12,12 +12,13 @@
     <form>
       <div class="form-group">
         <label>Buscar edital</label>
-        <input type="text" [(ngModel)]="filteredString" name="filteredString" class="form-control" />
+        <input type="text" [(ngModel)]="filteredString" name="filterTerm" class="form-control" />
         <small> Faça uma busca avançada para achar o seu edital</small>
       </div>
     </form>
   </div>
-  <div *ngFor="let edit of dashEditals" class="col-lg-4 col-md-6 col-sm-6" (click)="goToEdital(edit); mode='details'">
+  <div *ngFor="let edit of dashEditals | filter:filteredString" class="col-lg-4 col-md-6 col-sm-6"
+    (click)="goToEdital(edit); mode='details'">
     <div class="card card-stats">
       <div class="card-body ">
         <div class="row">

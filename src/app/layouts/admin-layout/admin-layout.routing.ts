@@ -1,6 +1,6 @@
 import { NotificationsComponent } from '../../pages/notifications/notifications.component';
 import { TypographyComponent } from '../../pages/typography/typography.component';
-import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
+import { DashboardComponent } from '../../pages/editais/dashboard.component';
 import { AddEditalComponent } from 'app/pages/add-edital/add-edital.component';
 import { ArquivosComponent } from 'app/pages/arquivos/arquivos.component';
 import { ProjetosComponent } from 'app/pages/projetos/projetos.component';
@@ -30,5 +30,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'loading',        component: LoadingComponent },
-    { path: 'loading2',       component: Loading2Component }
+    { path: 'loading2',       component: Loading2Component },
+    
 ];

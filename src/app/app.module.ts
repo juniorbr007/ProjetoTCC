@@ -5,8 +5,8 @@ import { ToastrModule } from "ngx-toastr";
 
 import { SidebarModule } from './sidebar/sidebar.module';
 import { FooterModule } from './shared/footer/footer.module';
-import { NavbarModule} from './shared/navbar/navbar.module';
-import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
+import { NavbarModule } from './shared/navbar/navbar.module';
+import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
@@ -16,7 +16,7 @@ import { environment } from '../environments/environment';
 import { ArquivosComponent } from './pages/arquivos/arquivos.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -32,7 +32,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProjetosComponent } from './pages/projetos/projetos.component';
 import { AddEditalComponent } from './pages/add-edital/add-edital.component';
 import { InicioComponent } from "./pages/inicio/inicio.component";
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -42,12 +42,13 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ArquivosComponent,
     ProjetosComponent,
     AddEditalComponent,
-    InicioComponent
+    InicioComponent,
+
   ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(AppRoutes,{
+    RouterModule.forRoot(AppRoutes, {
       useHash: false
     }),
     SidebarModule,

@@ -4,7 +4,6 @@
   </div>
 </div>
 
-
 <!-- EDITAIS -->
 <div *ngIf="mode=='list'" class="row">
 
@@ -39,7 +38,7 @@
       <div class="card-footer ">
         <hr>
         <div class="stats">
-          <i class="nc-icon nc-watch-time text-danger"></i> {{ edit.calendarfirst }}
+          <i class="nc-icon nc-watch-time text-danger"></i> {{ edit.calendarfirst| date:'shortDate' }}
           &nbsp;
           <i class="nc-icon nc-alert-circle-i text-danger"></i> {{ edit.obs }}
           &nbsp;
@@ -73,8 +72,6 @@
 <!-- EDITAIS -->
 
 
-
-
 <!-- DETAILS -->
 <div *ngIf="mode=='details'" class="col-md-12">
 
@@ -83,7 +80,6 @@
       <h5 class="card-title">Editais publicados </h5>
     </div>
     <div class="card-body ">
-      <p>Abra um edital publicado para poder ter mais informações.</p>
       <p>Use o botão <i class="nc-icon nc-simple-add" title="adicionar"></i> para adicionar o edital em <strong>Meus
           projetos</strong></p>
       <div class="">
@@ -178,7 +174,7 @@
             <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Valor da bolsa</p>
-                <p class="card-title">{{dataEdital.valor}}
+                <p class="card-title">{{dataEdital.valor | currency:'BRL':true }}
                 <p>
               </div>
             </div>
@@ -200,10 +196,9 @@
             <div class="col-5 col-md-6">
               <div class="">
                 <p class="card-category">Data do edital</p>
-                <p class="" fontData>{{dataEdital.calendarfirst}}
+                <p fontData>{{dataEdital.calendarfirst | date:'shortDate'}} 
                 <p>
-                <p class="" fontData>{{dataEdital.calendarend}}
-                <p></p>
+                <p fontData>{{dataEdital.calendarend | date:'shortDate' }}
                 <p>
               </div>
             </div>

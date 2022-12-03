@@ -3,12 +3,10 @@ import { SwitchToggleComponent } from 'app/switch-toggle/switch-toggle.component
 import { TypographyComponent } from '../../pages/typography/typography.component';
 import { DashboardComponent } from '../../pages/editais/dashboard.component';
 import { UsuariosComponent } from 'app/pages/usuarios/usuarios.component';
-import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
 import { TableComponent } from '../../pages/table/table.component';
 import { IconsComponent } from '../../pages/icons/icons.component';
 import { Loading2Component } from '../loading2/loading.component';
 import { LoadingComponent } from './../loading/loading.component';
-import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserComponent } from '../../pages/user/user.component';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,10 +27,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
   declarations: [
     DashboardComponent,
     UserComponent,
-    MapsComponent,
     TableComponent,
     IconsComponent,
-    UpgradeComponent,
     UsuariosComponent,
     TypographyComponent,
     NotificationsComponent,

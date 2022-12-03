@@ -10,7 +10,6 @@ import { IconsComponent } from '../../pages/icons/icons.component';
 import { TableComponent } from '../../pages/table/table.component';
 import { Loading2Component } from '../loading2/loading.component';
 import { LoadingComponent } from '../loading/loading.component';
-import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserComponent } from '../../pages/user/user.component';
 import { Routes } from '@angular/router';
 import { InicioComponent } from 'app/pages/inicio/inicio.component';
@@ -26,7 +25,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'table',          component: TableComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'loading',        component: LoadingComponent },

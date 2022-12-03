@@ -1,7 +1,13 @@
+<div class="form-group">
+  <label for="exampleFormControlTextarea1">Large textarea</label>
+  <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"></textarea>
+</div>
+
+
 <div class="col-md-12">
     <div class="card card-user">
       <div class="card-header">
-        <div class="row">
+        <div class="">
           <div class="col-md-6 col-6">
             <h5 class="card-title">Novo Edital</h5>
           </div>
@@ -9,11 +15,12 @@
             <!-- <button class="btn btn-sm btn-outline-danger btn-round btn-icon"><i class="fa fa-close"></i></button> -->
           </div>
         </div>
-      <div class="card-body">
-        <form>
-          <div class="row">
 
-            <div class="col-md-6">
+        
+
+
+        <form>
+            <div class="col-md-12">
               <div class="form-group">
                 <label><Strong>Tipo</Strong></label>
                 <select class="form-control" [(ngModel)]="dataEdital.tipos" name="tipos">
@@ -22,55 +29,55 @@
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label><strong>ID</strong></label>
                 <input type="text" [(ngModel)]="dataEdital.uid" name="id" disabled="" class="form-control" placeholder="ID">
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label><strong>Título</strong></label>
                 <input type="text" [(ngModel)]="dataEdital.title" name="title" class="form-control" placeholder="Título do edital" required maxlength="50">
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label><Strong>Descrição</Strong></label>
-                <textarea type="text" [(ngModel)]="dataEdital.descr" name="descr" [ngClass]="dataEdital.descr" class="form-control" placeholder="Descrição do edital"> </textarea>
+                <textarea type="text" [(ngModel)]="dataEdital.descr" name="descr" [ngClass]="dataEdital.descr" class="form-control" placeholder="Descrição do edital" rows="20"> </textarea>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label><strong>Observação</strong></label>
                 <input type="text" [(ngModel)]="dataEdital.obs" name="obs" [ngClass]="dataEdital.obs" class="form-control" placeholder="Uma breve observação" maxlength="50">
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label><strong>Requistos</strong></label>
                 <textarea type="text" [(ngModel)]="dataEdital.requirements" name="requirements" [ngClass]="dataEdital.requirements" class="form-control" placeholder="Requisitos de documentação etc."> </textarea>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label><strong>Quantidade de vagas do edital</strong></label>
                 <input type="text" [(ngModel)]="dataEdital.vagas" name="vagas" [ngClass]="dataEdital.vagas" class="form-control" placeholder="Digite as vagas">
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label><strong>Valor da bolsa, se houver.</strong></label>
                 <input type="text" [(ngModel)]="dataEdital.valor" name="valor" [ngClass]="dataEdital.valor" class="form-control" placeholder="Informe ou valor ou deixe 0">
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label><strong>Link do edital</strong></label>
                 <input type="url" [(ngModel)]="dataEdital.link" name="vagas" [ngClass]="dataEdital.link" class="form-control" placeholder="URL aqui" required>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label><strong>Calendario publicação</strong></label>
                 <input type="date" [(ngModel)]="dataEdital.calendarfirst" name="calendar" [ngClass]="dataEdital.calendarfirst" class="form-control" placeholder="Calendario inicio-fim">
@@ -78,13 +85,11 @@
                 <input type="date" [(ngModel)]="dataEdital.calendarend" name="calendar" [ngClass]="dataEdital.calendarend" class="form-control" placeholder="Calendario inicio-fim">
               </div>
             </div>
-          </div>
           <div class="row">
             <div class="update ml-auto mr-auto">
               <button type="button" (click)="saveEdital(dataEdital)" class="btn btn-danger btn-round">Publicar edital</button>
             </div>
           </div>
         </form>
-      </div>
     </div>
   </div>

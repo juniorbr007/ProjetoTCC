@@ -4,7 +4,7 @@
     font-size: 30px !important;
 }
 .fontData {
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .footer{
@@ -12,4 +12,8 @@
     position: absolute;
     width: 90%;
     text-align: right;
+}
+
+.textare{
+    display: none;
 }

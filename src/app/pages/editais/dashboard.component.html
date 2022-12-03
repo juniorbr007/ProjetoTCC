@@ -40,8 +40,6 @@
         <div class="stats">
           <i class="nc-icon nc-watch-time text-danger"></i> {{ edit.calendarfirst| date:'shortDate' }}
           &nbsp;
-          <i class="nc-icon nc-alert-circle-i text-danger"></i> {{ edit.obs }}
-          &nbsp;
           <i class="nc-icon nc-tag-content text-danger"></i> {{ edit.tipos }}
         </div>
       </div>
@@ -111,13 +109,6 @@
             <div class="form-group">
               <label><strong>Título</strong></label>
               <p class="card-title">{{dataEdital.title}}
-              <p></p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label><strong>Observação</strong></label>
-              <p class="card-title">{{dataEdital.obs}}
               <p></p>
             </div>
           </div>
@@ -236,13 +227,30 @@
       <div class="card ">
         <div class="card-header ">
           <h5 class="card-title">Descrição do edital</h5>
-          <p class="card-title">{{dataEdital.descr}}
+          <p class="card-title" [innerHTML]="dataEdital.descr">
           <p></p>
         </div>
         <div class="card-footer ">
           <hr>
           <div class="stats">
-            <i class="nc-icon nc-alert-circle-i"></i> Leia a descrição do edital com atenção !
+            <i class="nc-icon nc-alert-circle-i"></i> Leia a descrição com atenção !
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title">Observações</h5>
+          <p class="card-title" [innerHTML]="dataEdital.obs">
+          <p></p>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="nc-icon nc-alert-circle-i"></i> Preste atenção as observações com atenção !
           </div>
         </div>
       </div>
@@ -282,7 +290,7 @@
           <p class="card-category">Lei com atenção os requisitos necessários</p>
         </div>
         <div class="card-body">
-          <p>{{dataEdital.requirements}}</p>
+          <p [innerHTML]="dataEdital.requirements"></p>
         </div>
         <div class="card-footer">
           <div class="chart-legend">

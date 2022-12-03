@@ -7,7 +7,7 @@
 
 # Plataforma para ajudar os alunos.
 
-![version][version-badge] ![Idioma][idioma] ![status][status-emprogresso]
+![version][version-badge] ![Idioma][idioma] ![status][status-emprogresso] ![GitHub repo size](https://img.shields.io/github/repo-size/juniorbr007/ProjetoTCC)
 
 
 ### Para rodar localmente este projeto é necessário:

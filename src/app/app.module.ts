@@ -33,6 +33,7 @@ import { ProjetosComponent } from './pages/projetos/projetos.component';
 import { AddEditalComponent } from './pages/add-edital/add-edital.component';
 import { InicioComponent } from "./pages/inicio/inicio.component";
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { QuillModule } from 'ngx-quill'
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ReactiveFormsModule,
     FormsModule,
     MatPaginatorModule,
+    QuillModule.forRoot()
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },

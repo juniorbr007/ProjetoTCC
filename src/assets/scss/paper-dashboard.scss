@@ -16,6 +16,12 @@
 
 */
 
+
+// IMPORTE DO QUILL 
+@import '~quill/dist/quill.core.css';
+ @import '~quill/dist/quill.bubble.css';
+ @import '~quill/dist/quill.snow.css';
+
 @import 'paper-dashboard/variables';
 @import 'paper-dashboard/mixins';
 
@@ -25,7 +31,7 @@
 
 // Core CSS
 @import "paper-dashboard/buttons";
-// @import "paper-dashboard/inputs";
+@import "paper-dashboard/inputs";
 @import "paper-dashboard/typography";
 @import "paper-dashboard/misc";
 @import "paper-dashboard/checkboxes-radio";
@@ -55,7 +61,7 @@
 @import "paper-dashboard/angular/plugin-ngx-toastr";
 @import "paper-dashboard/angular/sidebar-and-main-panel";
 @import "paper-dashboard/angular/dropdown";
-// @import "paper-dashboard/angular/inputs";
+@import "paper-dashboard/angular/inputs";
 @import "paper-dashboard/angular/fixed-plugin";
 
 @import "paper-dashboard/responsive";

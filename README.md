@@ -1,18 +1,19 @@
 # Ajudai
 <div align="center">
-    <img src="./src/assets/screens/screen_ajudai.jpeg" align="right" width="100%" height="auto">
+   ```<img src="./src/assets/screens/screen_ajudai.jpeg" align="right" width="100%" height="auto">
     <img src="./src/assets/screens/bar.png" align="right" width="100%" height="auto">
+   ```
 </div>
 
 # Plataforma para ajudar os alunos.
 
-![version][version-badge] ![Idioma][idioma] ![status][status-emprogresso]
+![version][version-badge] ![Idioma][idioma] ![status][status-emprogresso] ![GitHub repo size](https://img.shields.io/github/repo-size/juniorbr007/ProjetoTCC)
 
 
 ### Para rodar localmente este projeto é necessário:
 #### Clonar o repositório
 ```javascript
-git clone git@github.com:TomCosta/ajudai.git
+git clone git@github.com:juniorbr007/ajudai.git
 ``` 
 #### Entrar na pasta do projeto
 ```javascript

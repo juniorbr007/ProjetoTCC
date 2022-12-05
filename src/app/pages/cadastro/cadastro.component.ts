@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { AuthService } from '../../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 // import 'sweetalert2/src/sweetalert2.scss';
@@ -15,7 +15,7 @@ import { take } from "rxjs/operators";
 export class CadastroComponent implements OnInit {
 
   showSpinner: boolean = false;
-  signinForm: FormGroup = this.fb.group({
+  signinForm: UntypedFormGroup = this.fb.group({
     name: ['', [Validators.required]],
     email: ['', [Validators.required]],
     password: ['', [Validators.required, Validators.min(3), Validators.max(8)]]
@@ -23,7 +23,7 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     public router: Router,
     public ngZone: NgZone 
   ){

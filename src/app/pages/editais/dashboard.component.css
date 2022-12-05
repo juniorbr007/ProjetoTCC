@@ -1,0 +1,19 @@
+.iconSize {
+    margin-left: -3px !important;
+    margin-top: -1px !important;
+    font-size: 30px !important;
+}
+.fontData {
+    font-size: 24px;
+}
+
+.footer{
+    bottom: 0;
+    position: absolute;
+    width: 90%;
+    text-align: right;
+}
+
+.textare{
+    display: none;
+}

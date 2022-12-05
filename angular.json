@@ -148,7 +148,6 @@
       }
     }
   },
-  "defaultProject": "pd-free-angularcli",
   "cli": {
     "analytics": false
   }

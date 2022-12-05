@@ -2,6 +2,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { first, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import { AlertService } from '../alert/alert.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class AuthService {
 
   constructor(
     private firestore: AngularFirestore,
-    private fireAuth: AngularFireAuth
+    private fireAuth: AngularFireAuth,
+    private alertServ: AlertService,
   ){    
   }
 
@@ -83,6 +85,7 @@ export class AuthService {
       localStorage.removeItem('userEmail');
       localStorage.removeItem('userData');
       localStorage.removeItem('userUID');
+      return this.alertServ.alertSuccess('Você fez logout!')
     });
   }
   

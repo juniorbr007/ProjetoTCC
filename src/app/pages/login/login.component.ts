@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { AuthService } from './../../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 // import 'sweetalert2/src/sweetalert2.scss';
@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
-  signinForm: FormGroup = this.fb.group({
+  signinForm: UntypedFormGroup = this.fb.group({
     email: ['', [Validators.required]],
     password: ['', [Validators.required]]
   });
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private autServ: AuthService,
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     public router: Router
   ){
   }

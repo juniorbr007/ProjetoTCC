@@ -1,0 +1,320 @@
+<div class="overlay-loading" *ngIf="showSpinner">
+  <div class="spinner-wrapper">
+    <app-loading></app-loading>
+  </div>
+</div>
+
+
+<!-- EDITAIS -->
+<div *ngIf="mode=='list'" class="row">
+
+  <div class="col-md-12">
+    <form>
+      <div class="form-group">
+        <label>Buscar edital</label>
+        <input type="text" [(ngModel)]="filteredString" name="filterTerm" class="form-control" />
+        <small> Faça uma busca avançada para achar o seu edital</small>
+      </div>
+    </form>
+  </div>
+  <div *ngFor="let edit of dashEditals | filter:filteredString" class="col-lg-4 col-md-6 col-sm-6"
+    (click)="goToEdital(edit); mode='details'">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center">
+              <i class="nc-icon nc-paper text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <!-- <p class="card-category">Edital</p> -->
+              <p class="card-title"> {{ edit.title }}
+              <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="nc-icon nc-watch-time text-danger"></i> {{ edit.calendarfirst| date:'shortDate' }}
+          &nbsp;
+          <i class="nc-icon nc-tag-content text-danger"></i> {{ edit.tipos }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="Page navigation example" class="footer">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+</div>
+<!-- EDITAIS -->
+
+
+<!-- DETAILS -->
+<div *ngIf="mode=='details'" class="col-md-12">
+
+  <div class="card ">
+    <div class="card-header ">
+      <h5 class="card-title">Editais publicados </h5>
+    </div>
+    <div class="card-body ">
+      <p>Use o botão <i class="nc-icon nc-simple-add" title="adicionar"></i> para adicionar o edital em <strong>Meus
+          projetos</strong></p>
+          
+      <div class="">
+        <div class="legend">
+          &nbsp;
+          <i class="fa fa-circle text-danger"></i> Editais e projetos
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-user">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <h5 class="card-title">Entenda melhor o Edital</h5>
+        </div>
+        <div class="col-md-6 col-12 text-right">
+          <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="subscribeProjects(dataEdital)"><i
+              class="nc-icon nc-simple-add iconSize" title="adicionar"></i></button>
+          &nbsp; &nbsp;
+          <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="closeEdit()"><i class="fa fa-close"
+              title="fechar"></i></button>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label><strong>Título</strong></label>
+              <p class="card-title"><strong>{{dataEdital.title}}</strong>
+              <p></p>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label><strong>Tipo</strong></label>
+              <p class="card-title"><strong>{{dataEdital.tipos}}</strong>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- DETAILS -->
+
+  <div *ngIf="mode=='details'" class="row">
+
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-watch-time text-danger"></i>
+              </div>
+            </div>
+            <div class="col-5 col-md-6">
+              <div class="">
+                <p class="card-category"><strong>Data do edital</strong></p>
+                <p fontData><strong>{{dataEdital.calendarfirst | date:'shortDate'}} </strong>
+                <p>
+                <p fontData><strong>{{dataEdital.calendarend | date:'shortDate' }}</strong>
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-money-coins text-success"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category"><strong>Valor da bolsa</strong></p>
+                <p class="card-title">{{dataEdital.valor | currency:'BRL':true }}
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+        </div>
+      </div>
+    </div>
+   
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-send text-primary"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="">
+                <p class="card-category"><strong>Link do Edital</strong></p>
+                <p class=""><a g>{{dataEdital.link}}</a>
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-user-run text-warning"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category"><strong>Quantidade de vagas</strong></p>
+                <p class="card-title">{{dataEdital.vagas}}
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="nc-icon nc-alert-circle-i"></i> Aproveite!
+          </div>
+
+        </div>
+                   -->
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title"><strong>Descrição do edital</strong></h5>
+          <p class="card-title" [innerHTML]="dataEdital.descr">
+          <p></p>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="nc-icon nc-alert-circle-i"></i> Leia a descrição com atenção !
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title"><strong>Observações</strong></h5>
+          <p class="card-title" [innerHTML]="dataEdital.obs">
+          <p></p>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="nc-icon nc-alert-circle-i"></i> Preste atenção as observações com atenção !
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="row">
+    <!-- 
+  <div class="col-md-4">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Email Statistics</h5>
+        <p class="card-category">Last Campaign Performance</p>
+      </div>
+      <div class="card-body ">
+        <canvas id="chartEmail"></canvas>
+      </div>
+      <div class="card-footer ">
+        <div class="legend">
+          <i class="fa fa-circle text-primary"></i> Opened
+          <i class="fa fa-circle text-warning"></i> Read
+          <i class="fa fa-circle text-danger"></i> Deleted
+          <i class="fa fa-circle text-gray"></i> Unopened
+        </div>
+        <hr>
+        <div class="stats">
+          <i class="fa fa-calendar"></i> Number of emails sent
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+    <div class="col-md-12">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h5 class="card-title">Requisitos</h5>
+          <p class="card-category">Lei com atenção os requisitos necessários</p>
+        </div>
+        <div class="card-body">
+          <p [innerHTML]="dataEdital.requirements"></p>
+        </div>
+        <div class="card-footer">
+          <div class="chart-legend">
+            <i class="fa fa-circle text-info"></i> X
+            <i class="fa fa-circle text-warning"></i> X
+          </div>
+          <hr />
+          <div class="card-stats">
+            <i class="nc-icon nc-single-copy-04"></i> Ajuste agora os documentos necessários em <a
+              [routerLink]="['/arquivos']">Meus arquivos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

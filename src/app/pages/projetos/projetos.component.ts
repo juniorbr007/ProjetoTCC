@@ -22,6 +22,7 @@ export class ProjetosComponent implements OnInit {
   userProjs: Projects;
   dataEdital: Edital = {
     uid: '',
+    tipos: '',
     title: '',
     descr: '',
     obs: '',
